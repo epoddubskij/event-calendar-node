@@ -2,6 +2,16 @@ export const eventFields = [
     "id",
     "start_date",
     "end_date",
+
+    "recurring",
+    "RRULE",
+    "STDATE",
+    "DTEND",
+
+    "recurringEventId",
+    "originalStartTime",
+    "status",
+
     "allDay",
     "type",
     "text",

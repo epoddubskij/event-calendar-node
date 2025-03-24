@@ -24,8 +24,6 @@ export const add = async (req: Request, res: Response, next: NextFunction) => {
     const eventRepository = getRepository(Event);
     try {
         const fields: any = getEventFields({...req.body, id: 0});
-        console.log(req.body);
-        console.log(fields);
         const event = await eventRepository.save(fields);
         res.send({ status: "ok", id: event.id });
     } catch (err) {
@@ -53,6 +51,7 @@ export const remove = async (req: Request, res: Response, next: NextFunction) =>
     try {
         const { id } = req.params;
         await eventRepository.delete(id);
+        await eventRepository.delete({recurringEventId: id});
         await uploadsRepository.delete({event: id});
         res.send({ status: "ok" });
     } catch (err) {
