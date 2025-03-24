@@ -13,6 +13,6 @@ Backend for Event Calendar
 #### run in dev mode:
 
 - set APP_DB_PATH=localhost
-- ``` npm install```
+- ```npm install```
 - ```npm run docker:dev```
-- in second terminal: ``` npm run dev```
+- in second terminal: ```npm run dev```
